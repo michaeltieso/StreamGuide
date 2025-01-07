@@ -20,7 +20,7 @@ StreamGuide is an open-source Laravel-based web application designed for Plex se
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/streamguide.git
+git clone https://github.com/michaeltieso/StreamGuide
 cd streamguide
 ```
 
