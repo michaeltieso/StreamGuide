@@ -1,0 +1,34 @@
+# Version Control
+.git
+.gitignore
+.gitattributes
+
+# Environment & Config
+.env
+.env.backup
+.env.production
+!.env.sample
+docker-compose*.yml
+Homestead.json
+Homestead.yaml
+
+# Dependencies (will be installed in container)
+/node_modules
+/vendor
+
+# IDE & Editor
+/.idea
+/.vscode
+/.fleet
+/.nova
+/.zed
+
+# Testing & Logs
+.phpunit.result.cache
+npm-debug.log
+yarn-error.log
+
+# Don't ignore storage structure
+!/storage/framework/
+!/storage/logs/
+!/storage/app/

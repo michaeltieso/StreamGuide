@@ -1,0 +1,28 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: streamguide-app
+    environment:
+      - TMDB_API_KEY=${TMDB_API_KEY:-65c16f65408eb50e3e67c21262201775}  # Default API key, can be overridden
+      - APP_NAME=${APP_NAME:-StreamGuide}
+      - APP_ENV=${APP_ENV:-local}
+      - APP_KEY=${APP_KEY}
+      - APP_DEBUG=${APP_DEBUG:-true}
+      - APP_URL=${APP_URL:-http://localhost}
+      - TZ=${TZ:-UTC}  # System timezone, defaults to UTC if not set
+    ports:
+      - "9980:80"
+    volumes:
+      - streamguide_storage:/var/www/html/storage
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9980"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+volumes:
+  streamguide_storage:
+    driver: local
+

@@ -1,0 +1,13 @@
+*
+!public/
+public/*
+!public/.gitignore
+!.gitignore
+
+# Allow certain directories but ignore their contents
+!public/uploads/
+public/uploads/*
+!public/logos/
+public/logos/*
+!public/media/
+public/media/*
